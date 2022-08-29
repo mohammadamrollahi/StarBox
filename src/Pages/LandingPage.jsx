@@ -1,8 +1,8 @@
 import React from 'react'
-import 'style.css'
+import './style.css'
 function LandingPage() {
   return (
-    <div>LandingPage</div>
+    <div>This app is developing on dev branch</div>
   )
 }
 
