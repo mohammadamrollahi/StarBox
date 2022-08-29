@@ -1,9 +1,9 @@
-import LandingPage from './Pages/LandingPage';
 import './App.css';
-
+import View from './Pages/View';
+import './Fonts.scss'
 function App() {
   return (
-    <LandingPage/>
+    <View/>
   );
 }
 
