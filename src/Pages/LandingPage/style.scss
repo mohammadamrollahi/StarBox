@@ -1,16 +1,25 @@
-.page-container{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    background-color: #006341;
-    
-}
-.page-innerContainer{
+.page-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #006341;
+  .page-innerContainer {
     position: absolute;
     width: calc(100% - 40px);
     height: calc(100% - 40px);
     margin: 20px 20px;
-    background: linear-gradient(180deg, #EAEFF1 57.81%, #C5D5CF 100%);
+    background: linear-gradient(180deg, #eaeff1 57.81%, #c5d5cf 100%);
     border-radius: 23px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
 
+    .page-innerContainer-bottomContainer {
+      display: flex;
+      margin-top: 200px;
+    }
+  }
+  .page-innerContainer::-webkit-scrollbar {
+    display: none;
+  }
 }

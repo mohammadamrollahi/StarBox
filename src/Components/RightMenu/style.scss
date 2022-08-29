@@ -1,0 +1,80 @@
+.rightMenu-container {
+  width: 64.03%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .products-header {
+    font-size: 28px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 19px;
+  }
+  hr.fancy-line {
+    border: 0;
+    height: 2px;
+    width: 294px;
+    margin: 0 auto;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 0, 0) 10%,
+      rgba(0, 0, 0, 0) 95%
+    );
+  }
+  .products-container {
+    direction: rtl;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .product-card {
+      box-shadow: 1px 2px 2px rgba(143, 158, 163, 0.2),
+        2px 4px 4px rgba(143, 158, 163, 0.2),
+        4px 8px 8px rgba(143, 158, 163, 0.2),
+        8px 16px 16px rgba(143, 158, 163, 0.2),
+        16px 32px 32px rgba(143, 158, 163, 0.2);
+      width: 218px;
+      height: 327px;
+      background-color: #ffffff;
+      border-radius: 23px;
+      margin: 40px 15px;
+
+      .product-poster {
+        width: 168px;
+        height: 168px;
+        border-radius: 103px;
+        top: -40px;
+        position: relative;
+        right: 25px;
+      }
+      .price {
+        color: #006341;
+        width: 100%;
+        text-align: center;
+        top: -17px;
+        position: relative;
+      }
+      .product-title {
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        top: -40px;
+        position: relative;
+      }
+      .add-button {
+        width: 188px;
+        height: 40px;
+        background: #006341;
+        border-radius: 32px;
+        border: none;
+        font-family: Vazirmatn;
+        color: #ffffff;
+        font-weight: 200;
+        right: 15px;
+        bottom: 27px;
+        position: relative;
+      }
+    }
+  }
+}
