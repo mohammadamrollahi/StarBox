@@ -16,7 +16,16 @@ function LeftMenu() {
         </div>
         </div>
         <div className="totalPriceAndTax-container">
-          <div className="totalPrice-container"></div>
+          <div className="totalPrice-container"><p>مجموع</p> <p>22000 تومان</p></div>
+          <div className="totalTax-container"> <p>مالیات</p> <p>53000 تومان</p> </div>
+
+        </div>
+
+        <div className="payable-container">
+          <p>قابل پرداخت</p> <p>22000 تومان</p>
+        </div>
+        <div className="payButton-container">
+          <button className="pay-button">نهایی کردن سفارش </button>
         </div>
       </div>
     </div>
