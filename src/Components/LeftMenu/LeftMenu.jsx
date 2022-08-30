@@ -25,7 +25,7 @@ function LeftMenu() {
           <p>قابل پرداخت</p> <p>22000 تومان</p>
         </div>
         <div className="payButton-container">
-          <button className="pay-button">نهایی کردن سفارش </button>
+          <button onClick={()=>{console.log(localStorage.user)}} className="pay-button">نهایی کردن سفارش </button>
         </div>
       </div>
     </div>
