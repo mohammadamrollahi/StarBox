@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 
 import "./style.scss";
 function LandingPage() {
+  const preOrder = useSelector((state) => state.Main.preOrder);
   const dispatch = useDispatch();
   let [products, setProduct] = useState([]);
   useEffect(() => {
@@ -72,7 +73,7 @@ function LandingPage() {
         <Header />
 
         <div className="page-innerContainer-bottomContainer">
-          <LeftMenu />
+          <LeftMenu dispatch={dispatch} preOrder={preOrder} />
           <RightMenu dispatch={dispatch} products={products} />
         </div>
       </div>

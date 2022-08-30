@@ -14,7 +14,7 @@ function RightMenu({dispatch, products }) {
             <img className="product-poster" src={item.poster} alt="" />
             <p className="product-title">{item.title}</p>
             <p className="price">{item.price} تومان </p>
-            <button className="add-button" onClick={()=>dispatch(add_item(item.id))}>افزودن به سبد خرید</button>
+            <button className="add-button" onClick={()=>dispatch(add_item(item.id,item.title,item.price))}>افزودن به سبد خرید</button>
           </div>
         ))}
       </div>
