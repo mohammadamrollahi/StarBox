@@ -9,7 +9,7 @@
   border-radius: 25px 25px 0 0;
   z-index: 100;
   .header-rightInner-container {
-    width: 467.5px;
+    width: 500px;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -37,6 +37,7 @@
     .logo {
       width: 68px;
       height: 68px;
+      margin-right: 20px;
     }
   }
   .header-leftInner-container {

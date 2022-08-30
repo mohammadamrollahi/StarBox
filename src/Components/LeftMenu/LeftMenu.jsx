@@ -3,8 +3,7 @@ import "./style.scss";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { add_item, reduce_item } from "../../Store/Main/MainActions";
-import basketBorder from "../../Additional/Vectors/basketBorder.png";
-import basketSmile from "../../Additional/Vectors/basketSmile.png";
+import basketLogo from "../../Additional/Vectors/basketLogo.png";
 
 function LeftMenu({ preOrder, dispatch }) {
   return (
@@ -61,8 +60,7 @@ function LeftMenu({ preOrder, dispatch }) {
         </div>
       ) : (
         <div className="emptyShoppingBasket">
-          <img src={basketBorder} alt="" />
-          <img src={basketSmile} alt="" />
+          <img className="basketBorder" src={basketLogo} alt="" />
           <p className="emptyBasket-text">سبد خرید شما خالی است</p>
         </div>
       )}

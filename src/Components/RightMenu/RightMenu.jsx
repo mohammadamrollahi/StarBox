@@ -1,23 +1,43 @@
 import React from "react";
 import "./style.scss";
 import Button from "@mui/material/Button";
-import {add_item} from '../../Store/Main/MainActions'
-function RightMenu({dispatch, products }) {
+import { add_item } from "../../Store/Main/MainActions";
+function RightMenu({ dispatch, products, categories }) {
   return (
     <div className="rightMenu-container">
-      <p className="products-header">میکس فراپاچینو</p>
-      <hr className="fancy-line" />
+      {categories.map((category) => (
+        <>
+          <p className="products-header">{category.title}</p>
+          <div className="fancy-line"></div>
 
-      <div className="products-container">
-        {products.map((item) => (
-          <div className="product-card">
-            <img className="product-poster" src={item.poster} alt="" />
-            <p className="product-title">{item.title}</p>
-            <p className="price">{item.price} تومان </p>
-            <button className="add-button" onClick={()=>dispatch(add_item(item.id,item.title,item.price))}>افزودن به سبد خرید</button>
+          <div className="products-container">
+            {products.map((item, index) =>
+              item.category == category.id ? (
+                <div
+                  style={
+                    index == 1 || index % 3 == 1
+                      ? { marginTop: "112px" }
+                      : { marginTop: "40px" }
+                  }
+                  className="product-card"
+                >
+                  <img className="product-poster" src={item.poster} alt="" />
+                  <p className="product-title">{item.title}</p>
+                  <p className="price">{item.price} تومان </p>
+                  <button
+                    className="add-button"
+                    onClick={() =>
+                      dispatch(add_item(item.id, item.title, item.price))
+                    }
+                  >
+                    افزودن به سبد خرید
+                  </button>
+                </div>
+              ) : null
+            )}
           </div>
-        ))}
-      </div>
+        </>
+      ))}
     </div>
   );
 }

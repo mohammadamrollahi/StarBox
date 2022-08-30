@@ -13,10 +13,9 @@
     display: flex;
     flex-direction: column;
     overflow: scroll;
-
     .page-innerContainer-bottomContainer {
       display: flex;
-      margin-top: 200px;
+      margin-top: 128px;
     }
   }
   .page-innerContainer::-webkit-scrollbar {

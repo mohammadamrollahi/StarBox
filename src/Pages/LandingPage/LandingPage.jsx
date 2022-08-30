@@ -11,9 +11,14 @@ function LandingPage() {
   const preOrder = useSelector((state) => state.Main.preOrder);
   const dispatch = useDispatch();
   let [products, setProduct] = useState([]);
+  let [categories, setCategories] = useState([]);
+
   useEffect(() => {
     axios.get("http://localhost:4000/products").then((res) => {
       setProduct(res.data);
+    });
+    axios.get("http://localhost:4000/categories").then((res) => {
+      setCategories(res.data);
     });
   }, []);
 
@@ -74,7 +79,7 @@ function LandingPage() {
 
         <div className="page-innerContainer-bottomContainer">
           <LeftMenu dispatch={dispatch} preOrder={preOrder} />
-          <RightMenu dispatch={dispatch} products={products} />
+          <RightMenu dispatch={dispatch} products={products} categories={categories} />
         </div>
       </div>
     </div>

@@ -2,25 +2,43 @@
   width: 35.96%;
   height: 70vh;
   color: #404040;
-
-.emptyShoppingBasket{
-    width: 100%;
-    height:100%;
-    .emptyBasket-text{
-        font-size: 32px;
+  display: flex;
+  align-items: flex-start;
+  .emptyShoppingBasket {
+    width: 16vw;
+    height: 20vh;
+    position: fixed;
+    left: 11.5vw;
+    top: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #4040407e;
+    .emptyBasket-text {
+      font-size: 32px;
     }
-}
+    .basketSmile {
+      width: 33.7px;
+      top: -500px;
+    }
+    .basketBorder {
+      width: 67.5px;
+    }
+  }
+
   .factor-container {
     width: 406px;
     min-height: 353px;
     background-color: #ffffff;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
     border-radius: 0px 11px 11px 11px;
-    position: fixed;
     .selectedItem-title {
       width: 100%;
       text-align: end;
-      padding: 15px;
+      padding: 15px 15px;
+      margin: 0;
       box-sizing: border-box;
     }
     .priceAndNumber-container {
@@ -29,6 +47,8 @@
       display: flex;
       justify-content: space-between;
       direction: rtl;
+      border-bottom: 1px solid #b4bbba58;
+      padding: 15px 0px;
 
       .selectedItem-price {
         color: #006341;
@@ -57,7 +77,6 @@
       margin-top: 17px;
       width: 100%;
       height: 94px;
-      border-top: 1px solid #b4bbba58;
       border-bottom: 2px solid #b4bbba58;
       .totalTax-container {
         width: 100%;
@@ -92,7 +111,7 @@
     }
     .payButton-container {
       width: 100%;
-      height: 88px;
+      height: 78px;
       display: flex;
       justify-content: space-between;
       align-items: center;
