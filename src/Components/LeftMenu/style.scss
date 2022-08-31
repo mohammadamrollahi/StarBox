@@ -29,11 +29,12 @@
   }
 
   .factor-container {
-    width: 406px;
+    max-width: 406px;
     min-height: 353px;
     background-color: #ffffff;
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
     border-radius: 0px 11px 11px 11px;
+    margin-top: 1rem;
     .selectedItem-title {
       width: 100%;
       text-align: end;
@@ -131,7 +132,20 @@
         font-family: Vazirmatn;
         font-size: 18px;
         font-weight: 100;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+      .pay-button:hover {
+        background-color: #006340c6;
       }
     }
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .factor-container {
+    width: 280px;
+  }
+  .leftMenu-container {
+    width: 30%;
   }
 }

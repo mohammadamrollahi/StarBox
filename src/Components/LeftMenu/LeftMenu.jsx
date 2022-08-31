@@ -1,11 +1,55 @@
 import React from "react";
 import "./style.scss";
+import axios from "axios";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { add_item, reduce_item } from "../../Store/Main/MainActions";
 import basketLogo from "../../Additional/Vectors/basketLogo.png";
+import Swal from "sweetalert2";
 
 function LeftMenu({ preOrder, dispatch }) {
+  let confirmOrder=() => {
+    axios
+      .post("http://localhost:4000/orders", {
+        userId: +localStorage.starboxUserId,
+        items: [
+          ...preOrder.items.map((item) => ({
+            productId: item.productId,
+            quantity: item.quantity,
+          })),
+        ],
+      })
+      .then((res) => {
+        if (res.status == 201) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "سفارش شما ثبت شد",
+            showConfirmButton: false,
+            timer: 3500,
+          });
+        }
+        else{
+          Swal.fire({
+            position: "center",
+            icon: "danger",
+            title: "مشکلی پیش آمده لطفا دوباره تلاش کنید",
+            showConfirmButton: false,
+            timer: 3500,
+          });
+        }
+      }) .catch((error)=>{
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "مشکلی پیش آمده لطفا دوباره تلاش کنید",
+          showConfirmButton: false,
+          timer: 3500,
+        });
+      } );
+  }
+
+
   return (
     <div className="leftMenu-container">
       {preOrder.items[0] ? (
@@ -18,7 +62,7 @@ function LeftMenu({ preOrder, dispatch }) {
                 <div className="number-selected-container">
                   <RemoveCircleOutlineIcon
                     onClick={() => dispatch(reduce_item(item.productId))}
-                    sx={{ fontSize: 34 }}
+                    sx={{ fontSize: 34, cursor: "pointer" }}
                   />
                   <p className="number-selected">{item.quantity}</p>
                   <AddCircleOutlineIcon
@@ -27,7 +71,7 @@ function LeftMenu({ preOrder, dispatch }) {
                         add_item(item.productId, item.productTitle, item.price)
                       )
                     }
-                    sx={{ fontSize: 34, color: "#006341" }}
+                    sx={{ fontSize: 34, color: "#006341", cursor: "pointer" }}
                   />
                 </div>
               </div>
@@ -49,9 +93,7 @@ function LeftMenu({ preOrder, dispatch }) {
           </div>
           <div className="payButton-container">
             <button
-              onClick={() => {
-                console.log(localStorage.user);
-              }}
+              onClick={confirmOrder}
               className="pay-button"
             >
               نهایی کردن سفارش{" "}

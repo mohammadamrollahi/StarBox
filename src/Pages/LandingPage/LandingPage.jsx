@@ -32,14 +32,15 @@ function LandingPage() {
       });
       if (!userLoggedIn) {
         Swal.fire({
-          title: "Submit your Email",
+          title: "ایمیل خود را وارد کنید",
           input: "text",
           inputAttributes: {
             autocapitalize: "off",
           },
-          showCancelButton: true,
-          confirmButtonText: "Look up",
+          confirmButtonText: "جست و جو",
           showLoaderOnConfirm: true,
+          confirmButtonColor: '#006341',
+
           preConfirm: (login) => {
             return axios
               .get(`http://localhost:4000/users`)
@@ -54,7 +55,7 @@ function LandingPage() {
                   }
                 });
                 if (!userFound) {
-                  throw new Error("user not found");
+                  throw new Error("کاربری با این ایمیل پیدا نشد");
                 }
               })
               .catch((error) => {
@@ -65,7 +66,10 @@ function LandingPage() {
         }).then((result) => {
           if (result.isConfirmed) {
             Swal.fire({
-              title: `You are login`,
+              confirmButtonText: "خب",
+              showLoaderOnConfirm: true,
+              confirmButtonColor: '#006341',
+              title: `شما وارد شدید`,
             });
           }
         });

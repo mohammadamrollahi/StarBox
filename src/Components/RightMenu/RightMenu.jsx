@@ -13,6 +13,7 @@ function RightMenu({ dispatch, products, categories }) {
           <div className="products-container">
             {products.map((item, index) =>
               item.category == category.id ? (
+                <div className="productCard-container">
                 <div
                   style={
                     index == 1 || index % 3 == 1
@@ -32,6 +33,7 @@ function RightMenu({ dispatch, products, categories }) {
                   >
                     افزودن به سبد خرید
                   </button>
+                </div>
                 </div>
               ) : null
             )}

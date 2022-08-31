@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className="header-container">
       <div className="header-leftInner-container">
-        <img className="seatch-icon" src={seatchIcon} alt="logo" />
+        <img className="search-icon" src={seatchIcon} alt="logo" />
       </div>
       <div className="header-rightInner-container">
         <a href="#"className="menu-item ">همکاری</a>
