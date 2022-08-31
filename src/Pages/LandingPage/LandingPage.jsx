@@ -80,9 +80,9 @@ function LandingPage() {
     <div className="page-container">
       <div className="page-innerContainer">
         <Header />
-
         <div className="page-innerContainer-bottomContainer">
           <LeftMenu dispatch={dispatch} preOrder={preOrder} />
+          <div className="horizontal-line"></div>
           <RightMenu dispatch={dispatch} products={products} categories={categories} />
         </div>
       </div>

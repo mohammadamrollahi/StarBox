@@ -58,7 +58,7 @@ function LeftMenu({ preOrder, dispatch }) {
             <>
               <p className="selectedItem-title">{item.productTitle} </p>
               <div className="priceAndNumber-container">
-                <p className="selectedItem-price"> {item.totalPrice} تومان</p>
+                <p className="selectedItem-price"> {item.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} تومان</p>
                 <div className="number-selected-container">
                   <RemoveCircleOutlineIcon
                     onClick={() => dispatch(reduce_item(item.productId))}
@@ -80,16 +80,16 @@ function LeftMenu({ preOrder, dispatch }) {
 
           <div className="totalPriceAndTax-container">
             <div className="totalPrice-container">
-              <p>مجموع</p> <p>{preOrder.allTotalPrices} تومان</p>
+              <p>مجموع</p> <p>{preOrder.allTotalPrices.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} تومان</p>
             </div>
             <div className="totalTax-container">
               {" "}
-              <p>مالیات</p> <p>{preOrder.allTax} تومان</p>{" "}
+              <p>مالیات</p> <p>{preOrder.allTax.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} تومان</p>{" "}
             </div>
           </div>
 
           <div className="payable-container">
-            <p>قابل پرداخت</p> <p>{preOrder.payabale} تومان</p>
+            <p>قابل پرداخت</p> <p>{preOrder.payabale.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} تومان</p>
           </div>
           <div className="payButton-container">
             <button
