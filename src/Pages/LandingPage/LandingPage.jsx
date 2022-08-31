@@ -5,7 +5,7 @@ import LeftMenu from "../../Components/LeftMenu/LeftMenu";
 import RightMenu from "../../Components/RightMenu/RightMenu";
 import { useSelector, useDispatch } from "react-redux";
 import Swal from "sweetalert2";
-import apiAddress from "../../Additional/api/api"
+import apiAddress from "../../Additional/api/api";
 
 import "./style.scss";
 function LandingPage() {
@@ -40,7 +40,7 @@ function LandingPage() {
           },
           confirmButtonText: "جست و جو",
           showLoaderOnConfirm: true,
-          confirmButtonColor: '#006341',
+          confirmButtonColor: "#006341",
 
           preConfirm: (login) => {
             return axios
@@ -52,7 +52,6 @@ function LandingPage() {
                     userFound = true;
                     localStorage.setItem("starboxUserEmail", login);
                     localStorage.setItem("starboxUserId", user.id);
-
                   }
                 });
                 if (!userFound) {
@@ -69,13 +68,13 @@ function LandingPage() {
             Swal.fire({
               confirmButtonText: "خب",
               showLoaderOnConfirm: true,
-              confirmButtonColor: '#006341',
+              confirmButtonColor: "#006341",
               title: `شما وارد شدید`,
             });
           }
         });
       }
-    }); 
+    });
   }, []);
   return (
     <div className="page-container">
@@ -84,7 +83,11 @@ function LandingPage() {
         <div className="page-innerContainer-bottomContainer">
           <LeftMenu dispatch={dispatch} preOrder={preOrder} />
           <div className="horizontal-line"></div>
-          <RightMenu dispatch={dispatch} products={products} categories={categories} />
+          <RightMenu
+            dispatch={dispatch}
+            products={products}
+            categories={categories}
+          />
         </div>
       </div>
     </div>

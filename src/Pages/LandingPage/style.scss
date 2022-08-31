@@ -17,18 +17,18 @@
       display: flex;
       margin-top: 128px;
     }
-    .horizontal-line{
+    .horizontal-line {
       top: 168px;
-      height:70vh;
+      height: 70vh;
       width: 3px;
       background: radial-gradient(
         ellipse at center,
-        #7A8F8F 10%,
+        #7a8f8f 10%,
         rgba(0, 0, 0, 0) 95%
       );
       position: fixed;
-      left:36.96%;
-  }
+      left: 36.96%;
+    }
   }
   .page-innerContainer::-webkit-scrollbar {
     display: none;

@@ -10,9 +10,15 @@ function Header() {
         <img className="search-icon" src={seatchIcon} alt="logo" />
       </div>
       <div className="header-rightInner-container">
-        <a href="#"className="menu-item ">همکاری</a>
-        <a href="#"className="menu-item">فروشگاه‌ها</a>
-        <a href="#"className="menu-item menu-selectedItem">منو</a>
+        <a href="#" className="menu-item ">
+          همکاری
+        </a>
+        <a href="#" className="menu-item">
+          فروشگاه‌ها
+        </a>
+        <a href="#" className="menu-item menu-selectedItem">
+          منو
+        </a>
         <img className="logo" src={starBoxLogo} alt="logo" />
       </div>
     </div>

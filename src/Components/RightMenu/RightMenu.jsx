@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.scss";
-import Button from "@mui/material/Button";
 import { add_item } from "../../Store/Main/MainActions";
 import CircularProgress from "@mui/material/CircularProgress";
 
