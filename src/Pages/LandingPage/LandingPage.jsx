@@ -5,6 +5,7 @@ import LeftMenu from "../../Components/LeftMenu/LeftMenu";
 import RightMenu from "../../Components/RightMenu/RightMenu";
 import { useSelector, useDispatch } from "react-redux";
 import Swal from "sweetalert2";
+import apiAddress from "../../Additional/api/api"
 
 import "./style.scss";
 function LandingPage() {
@@ -14,17 +15,17 @@ function LandingPage() {
   let [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/products").then((res) => {
+    axios.get(`${apiAddress}/products`).then((res) => {
       setProduct(res.data);
     });
-    axios.get("http://localhost:4000/categories").then((res) => {
+    axios.get(`${apiAddress}/categories`).then((res) => {
       setCategories(res.data);
     });
   }, []);
 
   useEffect(() => {
     let userLoggedIn = false;
-    axios.get("http://localhost:4000/users").then((res) => {
+    axios.get(`${apiAddress}/users`).then((res) => {
       res.data.map((user) => {
         if (user.email == localStorage.starboxUserEmail) {
           userLoggedIn = true;
@@ -43,7 +44,7 @@ function LandingPage() {
 
           preConfirm: (login) => {
             return axios
-              .get(`http://localhost:4000/users`)
+              .get(`${apiAddress}/users`)
               .then((response) => {
                 let userFound = false;
                 response.data.map((user) => {

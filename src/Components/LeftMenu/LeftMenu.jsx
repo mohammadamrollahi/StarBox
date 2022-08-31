@@ -6,11 +6,11 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { add_item, reduce_item } from "../../Store/Main/MainActions";
 import basketLogo from "../../Additional/Vectors/basketLogo.png";
 import Swal from "sweetalert2";
-
+import apiAddress from "../../Additional/api/api"
 function LeftMenu({ preOrder, dispatch }) {
   let confirmOrder=() => {
     axios
-      .post("http://localhost:4000/orders", {
+      .post(`${apiAddress}/orders`, {
         userId: +localStorage.starboxUserId,
         items: [
           ...preOrder.items.map((item) => ({
@@ -58,7 +58,7 @@ function LeftMenu({ preOrder, dispatch }) {
             <>
               <p className="selectedItem-title">{item.productTitle} </p>
               <div className="priceAndNumber-container">
-                <p className="selectedItem-price"> {item.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} تومان</p>
+                <p className="selectedItem-price"> {item.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") } تومان</p>
                 <div className="number-selected-container">
                   <RemoveCircleOutlineIcon
                     onClick={() => dispatch(reduce_item(item.productId))}
